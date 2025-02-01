@@ -16,10 +16,10 @@ An active subscription to Phaser Editor is required to load and use this templat
 
 ## Available Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm install`   | Install project dependencies |
-| `npm start`     | Launch a development web server |
+| Command         | Description                                    |
+| --------------- | ---------------------------------------------- |
+| `npm install`   | Install project dependencies                   |
+| `npm start`     | Launch a development web server                |
 | `npm run build` | Create a production build in the `dist` folder |
 
 ## Writing Code
@@ -34,7 +34,7 @@ To create a production build use the command `npm run build`.
 
 This will take your game code and build it into a single bundle, ready for deployment. This bundle is saved to the `dist` folder. The deployment script will also copy any assets your project imported, or stored in the public assets folder.
 
-To deploy your game, upload *all* of the contents of the `dist` folder to a public-facing web server.
+To deploy your game, upload _all_ of the contents of the `dist` folder to a public-facing web server.
 
 ## Phaser Editor considerations
 
@@ -70,8 +70,8 @@ The Scenes, User Components, and ScriptNodes are configured to compile to TypeSc
 
 The project requires the following script libraries:
 
-* [@phaserjs/editor-scripts-core](https://www.npmjs.com/package/@phaserjs/editor-scripts-core)
-* [@phaserjs/editor-scripts-simple-animations](https://www.npmjs.com/package/@phaserjs/editor-scripts-simple-animations)
+- [@phaserjs/editor-scripts-core](https://www.npmjs.com/package/@phaserjs/editor-scripts-core)
+- [@phaserjs/editor-scripts-simple-animations](https://www.npmjs.com/package/@phaserjs/editor-scripts-simple-animations)
 
 You can add your script nodes to the `src/script-nodes` folder.
 
