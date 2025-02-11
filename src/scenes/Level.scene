@@ -2,6 +2,8 @@
     "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
     "sceneType": "SCENE",
     "settings": {
+        "compilerInsertSpaces": true,
+        "compilerTabSize": 2,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
@@ -13,47 +15,128 @@
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "5c228da6-971a-4347-84e8-9f62464ba76d",
-            "label": "text",
-            "scope": "CLASS",
-            "x": 640,
-            "y": 458,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Phaser 3 + Phaser Editor v4\nVite + TypeScript",
-            "align": "center",
-            "fontFamily": "Arial",
-            "fontSize": "3em"
-        },
-        {
-            "type": "Image",
+            "type": "ArcadeImage",
             "id": "18c92425-1358-41c1-9d70-4f19132ecc8a",
             "label": "dino",
             "displayName": "Dinosaur",
             "scope": "CLASS",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 250,
-            "hitArea.height": 250,
             "texture": {
                 "key": "FufuSuperDino"
             },
-            "x": 127,
-            "y": 125
+            "x": 602,
+            "y": 351,
+            "scaleX": 0.75,
+            "scaleY": 0.75,
+            "collideWorldBounds": true,
+            "body.width": 250,
+            "body.height": 250
         },
         {
-            "type": "Image",
+            "prefabId": "c5e40711-bec9-46bf-a7d0-08a4badf41f3",
             "id": "85fe3c6e-d77a-45d6-b265-fb13d52f3818",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "guapen",
             "scope": "CLASS",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 208,
-            "hitArea.height": 240,
-            "texture": {
-                "key": "guapen"
-            },
-            "x": 576,
-            "y": 155
+            "x": 996,
+            "y": 553
+        },
+        {
+            "prefabId": "c5e40711-bec9-46bf-a7d0-08a4badf41f3",
+            "id": "5e8faaef-d6a1-4bb2-a35a-8b267a750f77",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "foodPrefab",
+            "x": 158,
+            "y": 647
+        },
+        {
+            "prefabId": "c5e40711-bec9-46bf-a7d0-08a4badf41f3",
+            "id": "43e2a132-4aab-4c17-9115-112c3141e49f",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "foodPrefab_1",
+            "x": 195,
+            "y": 161
+        },
+        {
+            "type": "Layer",
+            "id": "fd528982-1363-4efd-b235-19edcc8a9a8d",
+            "label": "ui",
+            "blendMode": -1,
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "b3009b3b-5758-41f6-b4be-cbae4879d4a5",
+                    "label": "scoreText",
+                    "scope": "CLASS",
+                    "x": 10,
+                    "y": 10,
+                    "text": "Score: 0 ",
+                    "fontSize": "64px"
+                }
+            ]
+        },
+        {
+            "prefabId": "ff395a28-2b54-4800-9c49-d6e43c80955a",
+            "id": "8eea8f80-fc79-4bde-b8a3-8a29a7aad2d8",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "burgerPrefab",
+            "x": 639,
+            "y": 118
+        },
+        {
+            "prefabId": "76da1dfd-4ae2-4092-ad04-be0cee3677c9",
+            "id": "1232248d-7ef9-41da-a3ad-1fa3f8fa9c8d",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "rockPrefab",
+            "x": 336,
+            "y": 517
+        },
+        {
+            "prefabId": "76da1dfd-4ae2-4092-ad04-be0cee3677c9",
+            "id": "778b4077-31ff-4e5a-86f6-27db7b06b891",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "rockPrefab_1",
+            "x": 336,
+            "y": 169
+        },
+        {
+            "prefabId": "76da1dfd-4ae2-4092-ad04-be0cee3677c9",
+            "id": "873b0050-ba98-412a-9d60-4ad726bc40c1",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "rockPrefab_2",
+            "x": 859,
+            "y": 512
+        },
+        {
+            "prefabId": "76da1dfd-4ae2-4092-ad04-be0cee3677c9",
+            "id": "1b54e758-60d1-4076-a6fa-0f43c27562c2",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "rockPrefab_3",
+            "x": 859,
+            "y": 175
         }
     ],
     "plainObjects": [
@@ -80,6 +163,25 @@
             "type": "Keyboard.Key",
             "label": "rightKey",
             "keyCode": "RIGHT"
+        },
+        {
+            "id": "e2fc7869-ff1a-4ded-a72d-588de22cc039",
+            "type": "Collider",
+            "label": "eat_collider",
+            "scope": "LOCAL",
+            "object1": "dino",
+            "object2": "eatList",
+            "overlapOnly": true,
+            "collideCallback": " this.eatFruit",
+            "callbackContext": "this"
+        },
+        {
+            "id": "cb425e13-6a8d-49c3-bfff-dcf4649de07e",
+            "type": "Collider",
+            "label": "walls_collider",
+            "scope": "LOCAL",
+            "object1": "dino",
+            "object2": "walls"
         }
     ],
     "meta": {
@@ -87,5 +189,27 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "lists": [
+        {
+            "id": "c853bccc-5411-4155-94f9-3ee176689d10",
+            "label": "eatList",
+            "objectIds": [
+                "85fe3c6e-d77a-45d6-b265-fb13d52f3818",
+                "43e2a132-4aab-4c17-9115-112c3141e49f",
+                "5e8faaef-d6a1-4bb2-a35a-8b267a750f77",
+                "8eea8f80-fc79-4bde-b8a3-8a29a7aad2d8"
+            ]
+        },
+        {
+            "id": "fe4664c9-e4a3-4714-8c39-d77c7332a076",
+            "label": "walls",
+            "objectIds": [
+                "1232248d-7ef9-41da-a3ad-1fa3f8fa9c8d",
+                "1b54e758-60d1-4076-a6fa-0f43c27562c2",
+                "873b0050-ba98-412a-9d60-4ad726bc40c1",
+                "778b4077-31ff-4e5a-86f6-27db7b06b891"
+            ]
+        }
+    ]
 }

@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import Level from './scenes/Level';
 import Preload from './scenes/Preload';
+import TitleScreen from './scenes/TitleScreen.ts';
 
 class Boot extends Phaser.Scene {
   constructor() {
@@ -26,7 +27,17 @@ window.addEventListener('load', function () {
       mode: Phaser.Scale.ScaleModes.FIT,
       autoCenter: Phaser.Scale.Center.CENTER_BOTH,
     },
-    scene: [Boot, Preload, Level],
+    scene: [Boot, Preload, Level, TitleScreen],
+    physics: {
+      default: 'arcade',
+      arcade: {
+        debug: true,
+        gravity: {
+          x: 0,
+          y: 0,
+        },
+      },
+    },
   });
 
   game.scene.start('Boot');
